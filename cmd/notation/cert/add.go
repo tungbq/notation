@@ -42,8 +42,14 @@ Example - Add a certificate to the "signingAuthority" type of a named store "wab
 	}
 	command.Flags().StringVarP(&opts.storeType, "type", "t", "", "specify trust store type, options: ca, signingAuthority")
 	command.Flags().StringVarP(&opts.namedStore, "store", "s", "", "specify named store")
-	command.MarkFlagRequired("type")
-	command.MarkFlagRequired("store")
+	err := command.MarkFlagRequired("type")
+	if err != nil {
+		return errors.New("Error when marking type required")
+	}
+	err := command.MarkFlagRequired("store")
+	if err != nil {
+		return errors.New("Error when marking store as required")
+	}
 	return command
 }
 
