@@ -82,7 +82,7 @@ func TestIsRegistryInsecureConfigPermissionError(t *testing.T) {
 		dir.UserConfigDir = oldDir
 		configOnce = sync.Once{}
 		return os.Chmod(filepath.Join(configDir, "config.json"), 0644)
-	}(dir.UserConfigDir)
+	}(dir.UserConfigDir)//lint:ignore
 
 	// update config dir
 	dir.UserConfigDir = configDir
