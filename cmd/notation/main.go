@@ -2,8 +2,9 @@ package main
 
 import (
 	"os"
-
+    //lint:ignore
 	"github.com/notaryproject/notation/cmd/notation/cert"
+	//lint:ignore
 	"github.com/notaryproject/notation/cmd/notation/policy"
 	"github.com/spf13/cobra"
 )
