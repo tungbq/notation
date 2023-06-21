@@ -2,7 +2,7 @@ package osutil
 
 import (
 	"bytes"
-	"io"
+	"io/ioutil"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -10,7 +10,7 @@ import (
 )
 
 func validFileContent(t *testing.T, filename string, content []byte) {
-	b, err := io.ReadFile(filename)
+	b, err := ioutil.ReadFile(filename)
 	if err != nil {
 		t.Fatal(err)
 	}
