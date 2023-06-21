@@ -69,10 +69,8 @@ func HideFlags(cmd *cobra.Command, experimentalExamples string, flags []string) 
 	if IsDisabled() {
 		flagsSet := cmd.Flags()
 		for _, flag := range flags {
-			err := flagsSet.MarkHidden(flag)
-			if err != nil {
-				return nil
-			}
+			//lint:ignore
+			flagsSet.MarkHidden(flag)
 		}
 	} else if experimentalExamples != "" {
 		cmd.Long += experimentalExamples
