@@ -25,6 +25,3 @@ jobs:
           # When `install-mode` is `goinstall` the value can be v1.2.3, `latest`, or the hash of a commit.
           version: latest
           only-new-issues: true
-          # skip cache because of flaky behaviors
-          skip-build-cache: true
-          skip-pkg-cache: true
