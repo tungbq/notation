@@ -226,7 +226,7 @@ func TestCopyToDir(t *testing.T) {
 		if err := os.Chmod(destTempDir, 0000); err != nil {
 			t.Fatal(err)
 		}
-		defer os.Chmod(destTempDir, 0700)
+		defer os.Chmod(destTempDir, 0700) //nolint:errcheck
 		if _, err := CopyToDir(filename, destTempDir); err == nil {
 			t.Fatal("should have error")
 		}
