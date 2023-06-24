@@ -34,6 +34,7 @@ func TestNodeAddPair(t *testing.T) {
 	}
 }
 
+//nolint:govet
 func ExampleRootPrint() {
 	root := New("root")
 	root.Print()
@@ -42,6 +43,7 @@ func ExampleRootPrint() {
 	// root
 }
 
+//nolint:govet
 func ExampleSingleLayerPrint() {
 	root := New("root")
 	root.Add("child1")
@@ -54,6 +56,7 @@ func ExampleSingleLayerPrint() {
 	// └── child2
 }
 
+//nolint:govet
 func ExampleMultiLayerPrint() {
 	root := New("root")
 	child1 := root.Add("child1")
