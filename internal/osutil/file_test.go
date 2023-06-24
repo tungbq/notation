@@ -2,7 +2,7 @@ package osutil
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io/ioutil" //check this
 	"os"
 	"path/filepath"
 	"runtime"
