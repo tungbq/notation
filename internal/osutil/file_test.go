@@ -2,7 +2,7 @@ package osutil
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io/ioutil" //check this
 	"os"
 	"path/filepath"
 	"runtime"
@@ -18,6 +18,8 @@ func validFileContent(t *testing.T, filename string, content []byte) {
 		t.Fatal("file content is not correct")
 	}
 }
+
+// Testing - simulate bugs
 
 func TestWriteFile(t *testing.T) {
 	t.Run("write file", func(t *testing.T) {
