@@ -19,6 +19,8 @@ func validFileContent(t *testing.T, filename string, content []byte) {
 	}
 }
 
+// Testing - simulate bugs
+
 func TestWriteFile(t *testing.T) {
 	t.Run("write file", func(t *testing.T) {
 		tempDir := t.TempDir()
