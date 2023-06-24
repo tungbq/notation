@@ -180,7 +180,7 @@ func TestCopyToDir(t *testing.T) {
 		if err := os.Chmod(filename, 0000); err != nil {
 			t.Fatal(err)
 		}
-		defer os.Chmod(filename, 0600)
+		defer os.Chmod(filename, 0600) //nolint:errcheck
 		if _, err := CopyToDir(filename, destDir); err == nil {
 			t.Fatal("should have error")
 		}
@@ -203,7 +203,7 @@ func TestCopyToDir(t *testing.T) {
 		if err := os.Chmod(destTempDir, 0000); err != nil {
 			t.Fatal(err)
 		}
-		defer os.Chmod(destTempDir, 0700)
+		defer os.Chmod(destTempDir, 0700) //nolint:errcheck
 		if _, err := CopyToDir(filename, filepath.Join(destTempDir, "a")); err == nil {
 			t.Fatal("should have error")
 		}
