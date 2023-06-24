@@ -2,7 +2,7 @@ package osutil
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io/ioutil" //nolint:staticcheck
 	"os"
 	"path/filepath"
 	"runtime"
@@ -14,6 +14,7 @@ func validFileContent(t *testing.T, filename string, content []byte) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	//nolint:gosimple
 	if bytes.Compare(content, b) != 0 {
 		t.Fatal("file content is not correct")
 	}

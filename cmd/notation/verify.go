@@ -181,6 +181,6 @@ func printMetadataIfPresent(outcome *notation.VerificationOutcome) {
 
 	if len(metadata) > 0 {
 		fmt.Println("\nThe artifact was signed with the following user metadata.")
-		ioutil.PrintMetadataMap(os.Stdout, metadata)
+		ioutil.PrintMetadataMap(os.Stdout, metadata) //nolint:errcheck
 	}
 }

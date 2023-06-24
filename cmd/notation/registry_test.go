@@ -22,7 +22,7 @@ func TestRegistry_getRemoteRepositoryWithReferrersAPISupported(t *testing.T) {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet && r.URL.Path == "/v2/test/referrers/"+zeroDigest {
 			w.WriteHeader(http.StatusOK)
-			w.Write([]byte(`{ "test": "TEST" }`))
+			w.Write([]byte(`{ "test": "TEST" }`)) //nolint:errcheck
 			return
 		}
 		t.Errorf("unexpected access: %s %q", r.Method, r.URL)
@@ -73,7 +73,7 @@ func TestRegistry_getRemoteRepositoryWithReferrersTagSchema(t *testing.T) {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet && r.URL.Path == "/v2/test/referrers/"+zeroDigest {
 			w.WriteHeader(http.StatusOK)
-			w.Write([]byte(`{ "test": "TEST" }`))
+			w.Write([]byte(`{ "test": "TEST" }`)) //nolint:errcheck
 			return
 		}
 		t.Errorf("unexpected access: %s %q", r.Method, r.URL)

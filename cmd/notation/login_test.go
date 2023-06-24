@@ -59,7 +59,7 @@ func TestLogin_PasswordFromStdin(t *testing.T) {
 	}
 
 	r, w, err := os.Pipe()
-	w.Write([]byte("password"))
+	w.Write([]byte("password")) //nolint:errcheck
 	w.Close()
 	oldStdin := os.Stdin
 
