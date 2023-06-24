@@ -82,7 +82,7 @@ func TestIsRegistryInsecureConfigPermissionError(t *testing.T) {
 		dir.UserConfigDir = oldDir
 		configOnce = sync.Once{}
 		return os.Chmod(filepath.Join(configDir, "config.json"), 0644)
-	}(dir.UserConfigDir)
+	}(dir.UserConfigDir) //nolint:errcheck
 
 	// update config dir
 	dir.UserConfigDir = configDir
@@ -132,7 +132,7 @@ func TestResolveKey(t *testing.T) {
 		defer func() error {
 			// restore the permission
 			return os.Chmod(filepath.Join(dir.UserConfigDir, "signingkeys.json"), 0644)
-		}()
+		}() //nolint:errcheck
 
 		// forbid reading the file
 		if err := os.Chmod(filepath.Join(dir.UserConfigDir, "signingkeys.json"), 0000); err != nil {
